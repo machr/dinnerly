@@ -1,4 +1,29 @@
 ---
+const protein = [
+	'chicken',
+	'beef',
+	'lamb',
+	'fish',
+	'vegetarian'
+]
+
+const carbs = [
+	'pasta',
+	'rice',
+	'beans',
+	'potatos'
+]
+
+const greens = [
+	'leafy green salad',
+	'broccoli',
+	'asparagus',
+	'carrot'
+]
+
+const getRandomChoice = (items) => {
+	return items[Math.floor(Math.random()*items.length)] 
+}
 ---
 
 <html lang="en">
@@ -7,9 +32,10 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Dinner Generator</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<h1>what should we have for dinner</h1>
+		<h2>We are having <span>{getRandomChoice(protein)}</span> with <span>{getRandomChoice(carbs)}</span> and <span>{getRandomChoice(greens)}</span></h2>
 	</body>
 </html>
